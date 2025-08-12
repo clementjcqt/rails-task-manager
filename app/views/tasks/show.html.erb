@@ -1,0 +1,13 @@
+<div class="container col-4 text-center mt-4">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= @task.title %></h5>
+      <p class="card-text"><%= @task.details %></p>
+      <%= link_to "Back to all tasks", tasks_path, class:"btn btn-primary" %>
+      <%= link_to "Edit task", edit_task_path, class:"btn btn-warning" %>
+      <%= link_to "Delete", task_path(@task),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-danger"
+      %>
+    </div>
+  </div>
+</div>

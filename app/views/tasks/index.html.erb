@@ -2,10 +2,10 @@
   <h1 class="my-4">To do list</h1>
   <ul class="list-group">
     <% @tasks.each do |task| %>
-      <li class="list-group-item py-2 me-2">
-        <input class="form-check-input me-1 " type="checkbox" value="" id="firstCheckbox">
-        <label class="form-check-label" for="firstCheckbox"><%= task.title %></label>
+      <li class="list-group-item d-flex align-items-center rounded">
+        <%= link_to task.title, task_path(task), class:"list-group-item form-control bg-secondary-subtle" %>
       </li>
     <% end %>
+    <%= link_to "Create new task", new_path, class:"btn btn-secondary m-4 p-2" %>
   </ul>
 </div>
